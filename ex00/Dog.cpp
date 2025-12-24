@@ -1,25 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/18 15:20:24 by mawako            #+#    #+#             */
-/*   Updated: 2025/12/19 14:10:26 by mawako           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Dog.hpp"
 
 Dog::Dog() : Animal("dog")
 {
-	std::cout << "Doge\n";
+	std::cout << "Dog Default constructor called!\n";
+}
+
+Dog::Dog(const Dog& other) : Animal(other)
+{
+	std::cout << "Dog Copy constructor called!\n";
 }
 
 Dog::~Dog()
 {
-	std::cout << "*Whoosh!*\n";
+	std::cout << "Dog Destructor called!\n";
+}
+
+Dog&	Dog::operator=(const Dog& other)
+{
+	if (this != &other)
+		Animal::operator=(other);
+	return (*this);
 }
 
 void	Dog::makeSound() const

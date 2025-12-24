@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/19 14:00:11 by mawako            #+#    #+#             */
-/*   Updated: 2025/12/19 14:08:18 by mawako           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef CAT_HPP
 # define CAT_HPP
 
@@ -21,8 +9,10 @@ class	Cat : public Animal
 {
 	public:
 		Cat();
+		Cat(const Cat& other);
 		~Cat();
-		
+		Cat&	operator=(const Cat& other);
+
 		void	makeSound() const;
 };
 

@@ -1,25 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/19 14:00:02 by mawako            #+#    #+#             */
-/*   Updated: 2025/12/19 14:13:08 by mawako           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Cat.hpp"
 
 Cat::Cat() : Animal("cat")
 {
-	std::cout << "Catty\n";
+	std::cout << "Cat Default constructor called!\n";
+}
+
+Cat::Cat(const Cat& other) : Animal(other)
+{
+	std::cout << "Cat Copy constructor called!\n";
 }
 
 Cat::~Cat()
 {
-	std::cout << "*dash!*\n";
+	std::cout << "Cat Destructor called!\n";
+}
+
+Cat&	Cat::operator=(const Cat& other)
+{
+	if (this != &other)
+		Animal::operator=(other);
+	return (*this);
 }
 
 void	Cat::makeSound() const

@@ -29,7 +29,12 @@ int	main()
 
 	Dog	dog;
 	Dog swampMan = dog;
+	Animal* a = new Dog();
 
 	std::cout << "ORIGIN: " << dog.getBrain() << std::endl;
 	std::cout << "COPIED: " << swampMan.getBrain() << std::endl;
+	std::cout << "Abstraction Test!: " << a->getType() << std::endl;
+
+	std::cout << "\n---- DELETE ----\n\n";
+	delete a;
 }

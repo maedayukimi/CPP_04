@@ -1,25 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/19 14:28:30 by mawako            #+#    #+#             */
-/*   Updated: 2025/12/20 05:00:05 by mawako           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	std::cout << "WRONGCAT HERE\n";
+	std::cout << "WrongCat Default constructor called!\n";
+}
+
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
+{
+	std::cout << "WrongCat Copy constructor called!\n";
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat Escaped!\n";
+	std::cout << "WrongCat Destructor called!\n";
+}
+
+WrongCat&	WrongCat::operator=(const WrongCat& other)
+{
+	if (this != &other)
+		WrongAnimal::operator=(other);
+	return (*this);
 }
 
 void	WrongCat::makeSound() const

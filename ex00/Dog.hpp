@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mawako <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/18 15:11:33 by mawako            #+#    #+#             */
-/*   Updated: 2025/12/19 13:12:58 by mawako           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef DOG_HPP
 # define DOG_HPP
 
@@ -21,7 +9,9 @@ class	Dog : public Animal
 {
 	public:
 		Dog();
+		Dog(const Dog& other);
 		~Dog();
+		Dog&	operator=(const Dog& other);
 
 		void	makeSound() const;
 };
